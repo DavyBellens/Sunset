@@ -1,5 +1,5 @@
 import { Image, ScrollView, Text, View } from "react-native";
-import { styles } from "@/constants/Colors";
+import { styles } from "@/constants/styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import { tinder } from "@/components/images";

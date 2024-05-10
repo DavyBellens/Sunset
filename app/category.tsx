@@ -4,7 +4,7 @@ import Drinks from "@/components/Drinks";
 import IceCream from "@/components/IceCream";
 import QuickBite from "@/components/QuickBite";
 import Restaurants from "@/components/Restaurants";
-import { styles } from "@/constants/Colors";
+import { styles } from "@/constants/styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link, useLocalSearchParams } from "expo-router";
 import { Text, View } from "react-native";

@@ -1,5 +1,5 @@
 import { findByTitleAndType } from "@/components/images";
-import { styles } from "@/constants/Colors";
+import { styles } from "@/constants/styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link, useLocalSearchParams } from "expo-router";
 import { useState } from "react";

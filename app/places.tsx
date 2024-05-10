@@ -7,7 +7,7 @@ import {
   iceCreamMain,
   restaurantMain,
 } from "@/components/images";
-import { styles } from "@/constants/Colors";
+import { styles } from "@/constants/styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import { ScrollView, Text, View } from "react-native";
