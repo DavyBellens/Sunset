@@ -3,7 +3,6 @@ import { Link } from "expo-router";
 import { Image, Text, View } from "react-native";
 import { iceCream } from "./images";
 
-
 export default function IceCream() {
   return (
     <View>
@@ -11,22 +10,22 @@ export default function IceCream() {
       <View style={styles.container}>
         {iceCream &&
           iceCream.length > 0 &&
-          iceCream.map((image, index) => (
+          iceCream.map((o, index) => (
             <View key={index} style={styles.picContainer}>
               <Link
                 href={{
                   pathname: "/venue",
                   params: {
-                    name: image.title,
-                    type: image.type,
+                    name: o.title,
+                    type: o.type,
                   },
                 }}
               >
                 <View>
                   <Image
                     key={index}
-                    source={image.image}
-                    alt={image.title}
+                    source={o.image}
+                    alt={o.title}
                     style={styles.picture}
                   />
                 </View>

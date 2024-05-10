@@ -1,5 +1,6 @@
+import { styles } from "@/constants/Colors";
 import { Link } from "expo-router";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import { ImageBackground, Text, View } from "react-native";
 
 export default function MenuItem({
   title,
@@ -29,32 +30,3 @@ export default function MenuItem({
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  imageText: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  restaurantTitle: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-    shadowColor: "black",
-    textShadowColor: "rgba(0, 0, 0, 1)",
-    textShadowOffset: { width: 2, height: 1 },
-    textShadowRadius: 10,
-  },
-  image: {
-    width: 200,
-    height: 100,
-    margin: 10,
-    borderRadius: 10,
-    overflow: "hidden",
-  },
-});
