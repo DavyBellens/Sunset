@@ -1,35 +1,38 @@
-import { Image, ScrollView, StyleSheet, View } from "react-native";
-import { r1, r2 } from "./images.js";
+import { styles } from "@/constants/Colors";
+import { Link } from "expo-router";
+import { Image, Text, View } from "react-native";
+import { restaurant } from "./images";
 
 export default function Restaurants() {
-  const images = [r1, r2, r1, r1, r1, r1, r1, r1, r1, r1, r1, r1, r1];
   return (
     <View>
-      <ScrollView horizontal>
-        <View style={styles.container}>
-          {images.map((image, index) => (
-            <Image
-              key={index}
-              source={image}
-              style={styles.picture}
-              width={10}
-            />
+      <Text style={styles.h1}>Restaurants</Text>
+      <View style={styles.container}>
+        {restaurant &&
+          restaurant.length > 0 &&
+          [...restaurant, ...restaurant].map((image, index) => (
+            <View key={index} style={styles.picContainer}>
+              <Link
+                href={{
+                  pathname: "/venue",
+                  params: {
+                    name: image.title,
+                    type: image.type,
+                  },
+                }}
+              >
+                <View>
+                  <Image
+                    key={index}
+                    source={image.image}
+                    alt={image.title}
+                    style={styles.picture}
+                  />
+                </View>
+              </Link>
+            </View>
           ))}
-        </View>
-      </ScrollView>
+      </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "row",
-  },
-  picture: {
-    width: 100,
-    height: 100,
-    borderRadius: 10,
-    margin: 10,
-  },
-});

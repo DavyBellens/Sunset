@@ -1,40 +1,50 @@
-import QuickBite from "@/components/QuickBite";
-import Restaurants from "@/components/Restaurants";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
+import { styles } from "@/constants/Colors";
+import { LinearGradient } from "expo-linear-gradient";
+import { Link } from "expo-router";
+import { tinder } from "@/components/images";
 
-export default function Index() {
+export default function YourMatches() {
   return (
     <ScrollView>
-      <View style={styles.container}>
-        <Text style={styles.h1}>Pick a place</Text>
-        <Text style={styles.h2}>Restaurant</Text>
-        <Restaurants />
-        <Text style={styles.h2}>Quick bite</Text>
-        <QuickBite />
-
-        <Text>Edit app/index.tsx to edit this screen.</Text>
-        <Text>Edit app/index.tsx to edit this screen.</Text>
+      <View style={styles.body}>
+        <LinearGradient
+          colors={["#63003b", "#ff3d3d"]}
+          locations={[0, 1]}
+          style={styles.linearGradient}
+        />
+        <Text style={styles.h1}>Your Matches</Text>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "column",
+            justifyContent: "center",
+            borderRadius: 10,
+            backgroundColor: "white",
+            maxHeight: 300,
+            width: "90%",
+          }}
+        >
+          {tinder.map((item, index) => (
+            <View key={index} style={styles.profiles}>
+              <Image
+                source={item.image}
+                style={{
+                  left: 10,
+                  position: "absolute",
+                  width: 75,
+                  height: 75,
+                  borderRadius: 50,
+                  margin: 10,
+                }}
+              />
+              <Link href={"/places"} style={styles.proposeLink}>
+                Propose a Location
+              </Link>
+            </View>
+          ))}
+        </View>
       </View>
     </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-  },
-  h1: {
-    textAlign: "center",
-    fontSize: 24,
-    fontWeight: "bold",
-    margin: 50,
-    marginTop: 100,
-  },
-  h2: {
-    margin: 15,
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-});
