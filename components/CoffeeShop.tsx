@@ -10,6 +10,7 @@ export default function CoffeeShop() {
       <View style={styles.container}>
         {coffee &&
           coffee.length > 0 &&
+          // Use the spread operator to double the number of coffee images to fill the screen more
           [...coffee, ...coffee].map((o, index) => (
             <View key={index} style={styles.picContainer}>
               <Link

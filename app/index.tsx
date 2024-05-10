@@ -14,30 +14,10 @@ export default function YourMatches() {
           style={styles.linearGradient}
         />
         <Text style={styles.h1}>Your Matches</Text>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "column",
-            justifyContent: "center",
-            borderRadius: 10,
-            backgroundColor: "white",
-            maxHeight: 300,
-            width: "90%",
-          }}
-        >
+        <View style={styles.profilesView}>
           {tinder.map((item, index) => (
             <View key={index} style={styles.profiles}>
-              <Image
-                source={item.image}
-                style={{
-                  left: 10,
-                  position: "absolute",
-                  width: 75,
-                  height: 75,
-                  borderRadius: 50,
-                  margin: 10,
-                }}
-              />
+              <Image source={item.image} style={styles.profileImage} />
               <Link href={"/places"} style={styles.proposeLink}>
                 Propose a Location
               </Link>

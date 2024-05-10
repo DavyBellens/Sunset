@@ -1,24 +1,13 @@
 import { findByTitleAndType } from "@/components/images";
+import { styles } from "@/constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link, useLocalSearchParams } from "expo-router";
-import { useEffect, useState } from "react";
-import {
-  Alert,
-  Dimensions,
-  Image,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
-import { styles } from "@/constants/Colors";
+import { useState } from "react";
+import { Alert, Image, Pressable, Text, View } from "react-native";
 
 export default function Venue() {
   const { name, type } = useLocalSearchParams();
   const [pressed, setPressed] = useState(false);
-  const [venue, setVenue] = useState<
-    { image: any; title: string; type: string } | undefined
-  >(undefined);
   const AlertMessage = () => {
     setPressed(!pressed);
     Alert.alert("Are you sure?", "Do you want to propose this venue?", [
@@ -33,12 +22,6 @@ export default function Venue() {
       },
     ]);
   };
-  useEffect(() => {
-    if (name && type) {
-      const venue = findByTitleAndType(name as string, type as string);
-      if (venue) setVenue(venue);
-    }
-  }, []);
   return (
     <View>
       <LinearGradient
@@ -46,16 +29,9 @@ export default function Venue() {
         locations={[0, 1]}
         style={styles.linearGradient}
       />
-      <View
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: Dimensions.get("window").height,
-        }}
-      >
+      <View style={styles.venueView}>
         <View style={styles.back}>
-          <Link href={".."} style={{ fontSize: 20, color: "white" }}>
+          <Link href={".."} style={styles.backText}>
             Back
           </Link>
         </View>
@@ -66,28 +42,19 @@ export default function Venue() {
             type &&
             findByTitleAndType(name as string, type as string)?.image
           }
-          style={{
-            width: 200,
-            height: 200,
-            borderRadius: 10,
-            margin: 10,
-          }}
+          style={styles.venueImage}
         />
         <Pressable
           style={{
-            borderRadius: 25,
-            backgroundColor: pressed ? "white" : "transparent",
-            borderWidth: 2,
-            borderColor: "white",
-            padding: 15,
+            ...styles.proposeButton,
+            backgroundColor: pressed ? "white" : "rgb(230, 130, 130)",
           }}
           onPress={() => AlertMessage()}
         >
           <Text
             style={{
+              ...styles.proposeButtonText,
               color: pressed ? "rgb(230, 130, 130)" : "white",
-              fontSize: 20,
-              fontWeight: "bold",
             }}
           >
             Propose

@@ -10,7 +10,8 @@ export default function BubbleTea() {
       <View style={styles.container}>
         {bubbleTea &&
           bubbleTea.length > 0 &&
-          bubbleTea.map((o, index) => (
+          // Use the spread operator to double the number of bubble tea images to fill the screen more
+          [...bubbleTea, ...bubbleTea].map((o, index) => (
             <View key={index} style={styles.picContainer}>
               <Link
                 href={{

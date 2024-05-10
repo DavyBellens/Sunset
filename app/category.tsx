@@ -4,10 +4,10 @@ import Drinks from "@/components/Drinks";
 import IceCream from "@/components/IceCream";
 import QuickBite from "@/components/QuickBite";
 import Restaurants from "@/components/Restaurants";
+import { styles } from "@/constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link, useLocalSearchParams } from "expo-router";
-import { Dimensions, StyleSheet, Text, View } from "react-native";
-import { styles } from "@/constants/Colors";
+import { Text, View } from "react-native";
 export default function Category() {
   const name = String(useLocalSearchParams().name);
 
@@ -19,7 +19,7 @@ export default function Category() {
         style={styles.linearGradient}
       />
       <View style={styles.back}>
-        <Link href={".."} style={{ fontSize: 20, color: "white" }}>
+        <Link href={".."} style={styles.backText}>
           Back
         </Link>
       </View>

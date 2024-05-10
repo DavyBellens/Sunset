@@ -20,6 +20,23 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     height: 100,
   },
+  profilesView: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
+    borderRadius: 10,
+    backgroundColor: "white",
+    maxHeight: 300,
+    width: "90%",
+  },
+  profileImage: {
+    left: 10,
+    position: "absolute",
+    width: 75,
+    height: 75,
+    borderRadius: 50,
+    margin: 10,
+  },
   proposeLink: {
     color: "white",
     padding: 10,
@@ -30,6 +47,23 @@ export const styles = StyleSheet.create({
     backgroundColor: "#990033",
     borderRadius: 10,
   },
+  proposeButton: {
+    borderRadius: 25,
+    borderWidth: 2,
+    borderColor: "white",
+    padding: 15,
+  },
+  proposeButtonText: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  venueView: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: Dimensions.get("window").height,
+  },
+
   back: {
     position: "absolute",
     top: 10,
@@ -42,6 +76,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  backText: { fontSize: 20, color: "white" },
   body: {
     color: "#fff",
     flex: 1,
@@ -58,6 +93,23 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  restaurantTitle: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    shadowColor: "black",
+    textShadowColor: "rgba(0, 0, 0, 1)",
+    textShadowOffset: { width: 2, height: 1 },
+    textShadowRadius: 10,
+  },
+  image: {
+    width: 200,
+    height: 100,
+    margin: 10,
+    borderRadius: 10,
+    overflow: "hidden",
+  },
   linearGradient: {
     position: "absolute",
     left: 0,
@@ -68,18 +120,6 @@ export const styles = StyleSheet.create({
   restaurantContainer: {
     display: "flex",
     alignItems: "center",
-  },
-  restaurantTitle: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  image: {
-    width: 200,
-    height: 100,
-    borderRadius: 10,
-    margin: 10,
   },
   h1: {
     color: "#fff",
@@ -111,6 +151,12 @@ export const styles = StyleSheet.create({
   picture: {
     width: 100,
     height: 100,
+    borderRadius: 10,
+    margin: 10,
+  },
+  venueImage: {
+    width: 200,
+    height: 200,
     borderRadius: 10,
     margin: 10,
   },

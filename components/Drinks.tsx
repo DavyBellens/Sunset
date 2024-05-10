@@ -10,6 +10,7 @@ export default function Drinks() {
       <View style={styles.container}>
         {drink &&
           drink.length > 0 &&
+          // Use the spread operator to double the number of drink images to fill the screen more
           [...drink, ...drink].map((o, index) => (
             <View key={index} style={styles.picContainer}>
               <Link

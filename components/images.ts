@@ -150,6 +150,7 @@ export const iceCream = [i1, i2, i3, i4];
 export const restaurant = [r1, r2];
 export const drink = [d1, d2, d3];
 
+// Function to find an image by title and type of venue by title and name
 export function findByTitleAndType(title: string, type: string) {
   if (type === "R") {
     return restaurant.find((image) => image.title === title);

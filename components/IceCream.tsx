@@ -10,7 +10,8 @@ export default function IceCream() {
       <View style={styles.container}>
         {iceCream &&
           iceCream.length > 0 &&
-          iceCream.map((o, index) => (
+          // Use the spread operator to double the number of bubble tea images to fill the screen more
+          [...iceCream, ...iceCream].map((o, index) => (
             <View key={index} style={styles.picContainer}>
               <Link
                 href={{

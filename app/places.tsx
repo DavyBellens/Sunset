@@ -1,16 +1,16 @@
 import MenuItem from "@/components/MenuItem";
 import {
-  fastfoodMain,
-  restaurantMain,
-  drinkMain,
-  coffeeMain,
   bubbleTeaMain,
+  coffeeMain,
+  drinkMain,
+  fastfoodMain,
   iceCreamMain,
+  restaurantMain,
 } from "@/components/images";
-import { LinearGradient } from "expo-linear-gradient";
-import { Dimensions, ScrollView, StyleSheet, Text, View } from "react-native";
 import { styles } from "@/constants/Colors";
+import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
+import { ScrollView, Text, View } from "react-native";
 
 export default function Index() {
   return (
@@ -22,7 +22,7 @@ export default function Index() {
           style={styles.linearGradient}
         />
         <View style={styles.back}>
-          <Link href={".."} style={{ fontSize: 20, color: "white" }}>
+          <Link href={".."} style={styles.backText}>
             Back
           </Link>
         </View>
